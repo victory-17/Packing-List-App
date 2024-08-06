@@ -47,6 +47,5 @@ To get a local copy up and running, follow these steps:
    ```bash
    http://localhost:3000
 
-
 ##Usage
 Simply add items to your packing list and mark them as packed when you are ready. You can also remove items that you no longer need.
