@@ -2,25 +2,30 @@ import Header from "./components/Header";
 import Form from "./components/Form";
 import PackingList from "./components/PackingList";
 import Stats from "./components/Stats";
-import {useState} from "react";
+import {useState, useEffect} from "react";
 import Swal from 'sweetalert2';
 
 function App() {
     const [items, setItems] = useState([]);
 
+    useEffect(() => {
+        const storedItems = JSON.parse(localStorage.getItem('items'));
+        if (storedItems) {
+            setItems(storedItems);
+        }
+    }, []);
+
     function handleAddItems(item) {
-        setItems(items => [...items, item]);
+        const updatedItems = [...items, item];
+        setItems(updatedItems);
+        localStorage.setItem('items', JSON.stringify(updatedItems));
     }
 
     function handleDeleteItem(id) {
-        setItems(items => items.filter(item => item.id !== id));
+        const updatedItems = items.filter(item => item.id !== id);
+        setItems(updatedItems);
+        localStorage.setItem('items', JSON.stringify(updatedItems));
     }
-
-
-/*     function handleClearListItems() {
-        const confirmed = window.confirm('Are you sure? You want to delete All items!');
-        if (confirmed) setItems([]);
-    } */
 
     function handleClearListItems() {
         Swal.fire({
@@ -34,6 +39,7 @@ function App() {
         }).then((result) => {
             if (result.isConfirmed) {
                 setItems([]);
+                localStorage.removeItem('items');
                 Swal.fire({
                     title: 'Items Deleted',
                     icon: 'success',
@@ -44,27 +50,13 @@ function App() {
         });
     }
 
-
     function handlePackedItem(id) {
-        setItems(items => {
-            return items.map(item => {
-                return item.id === id ? {...item, packed: !item.packed} : item
-            })
-        })
+        const updatedItems = items.map(item =>
+            item.id === id ? { ...item, packed: !item.packed } : item
+        );
+        setItems(updatedItems);
+        localStorage.setItem('items', JSON.stringify(updatedItems));
     }
-
-    /*
-    function handlePackedItem(id) {
-        setItems(items => {
-            return items.map(item => {
-                if (item.id === id) {
-                    return { ...item, packed: !item.packed };
-                }
-                return item;
-            });
-        });
-    }*/
-
 
     return (
         <main className={"app"}>

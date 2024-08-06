@@ -1,9 +1,13 @@
-import {useState} from "react";
+import {useState, useEffect} from "react";
 import Item from "./items";
 
 function PackingList({items, onDeleteItem, onPackedItem, onClearListItems}) {
     const [sortBy, setSortBy] = useState('input');
     let sortedItems;
+
+    useEffect(() => {
+        localStorage.setItem('items', JSON.stringify(items));
+    }, [items]);
 
     if (sortBy === 'input') {
         sortedItems = items
