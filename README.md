@@ -30,22 +30,24 @@ To get a local copy up and running, follow these steps:
 1. **Clone the repository**
    ```bash
    git clone https://github.com/victory-17/packing-list-app.git
-
+   ```
 2. **Navigate to the project directory**
    ```bash
    cd packing-list-app
-
+   ```
 3. **Install dependencies**
    ```bash
    npm install
-
+   ```
 4. **Run the app**
    ```bash
    npm start
-
+   ```
 5. **Open your browser and go to**
    ```bash
    http://localhost:3000
+   ```
 
 ## Usage
+
 Simply add items to your packing list and mark them as packed when you are ready. You can also remove items that you no longer need.
