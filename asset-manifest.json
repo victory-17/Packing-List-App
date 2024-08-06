@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/packing-list-app/static/css/main.b8f0f4df.css",
-    "main.js": "/packing-list-app/static/js/main.1d137edc.js",
+    "main.css": "/packing-list-app/static/css/main.620ea051.css",
+    "main.js": "/packing-list-app/static/js/main.ead98950.js",
     "index.html": "/packing-list-app/index.html",
-    "main.b8f0f4df.css.map": "/packing-list-app/static/css/main.b8f0f4df.css.map",
-    "main.1d137edc.js.map": "/packing-list-app/static/js/main.1d137edc.js.map"
+    "main.620ea051.css.map": "/packing-list-app/static/css/main.620ea051.css.map",
+    "main.ead98950.js.map": "/packing-list-app/static/js/main.ead98950.js.map"
   },
   "entrypoints": [
-    "static/css/main.b8f0f4df.css",
-    "static/js/main.1d137edc.js"
+    "static/css/main.620ea051.css",
+    "static/js/main.ead98950.js"
   ]
 }
