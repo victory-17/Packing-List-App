@@ -35,11 +35,9 @@ To get a local copy up and running, follow these steps:
    ```bash
    cd packing-list-app
 
-
 3. **Install dependencies**
    ```bash
    npm install
-
 
 4. **Run the app**
    ```bash
